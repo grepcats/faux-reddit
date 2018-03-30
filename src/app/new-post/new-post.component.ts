@@ -14,7 +14,7 @@ let currentId: number = 5;
 
 export class NewPostComponent implements OnInit {
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,10 +25,11 @@ export class NewPostComponent implements OnInit {
     console.log(newPost);
     this.postService.addPost(newPost);
     currentId += 1;
+    this.goHome();
   }
 
   goHome() {
-    this.router.navigate(['posts', clickedPost.id]);
+    this.router.navigate(['']);
   }
 
 }
