@@ -43,11 +43,5 @@ export class PostDetailComponent implements OnInit {
     //console.log(this.postService.getPostById(postId).downvotes)
   }
 
-  addComment(commentText: string) {
-    let timestamp = new Date;
-    let newComment = new Comment(this.postToDisplay.id, commentText, timestamp);
-    console.log(newComment);
-    this.comments.push(newComment);
-    console.log(this.comments);
-  }
+
 }

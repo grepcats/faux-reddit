@@ -30,10 +30,10 @@
   <div class="new-comment">
     <label for="comment-text">Comment</label>
     <textarea name="comment-text" #commentText></textarea>
-    <button (click)="addComment(commentText.value)">save</button>
+    <button (click)="postToDisplay.addComment(commentText.value)">save</button>
   </div>
   <div class="the-comments">
-    <p *ngFor="let comment of comments">{{comment.text}} <span class="timestamp">{{comment.timestamp}}</span></p>
+    <p *ngFor="let comment of postToDisplay.allComments">{{comment.text}} <span class="timestamp">{{comment.timestamp}}</span></p>
 
   </div>
 </div>
