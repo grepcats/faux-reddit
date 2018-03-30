@@ -20,8 +20,8 @@ export class AppComponent {
 
 
 
-  // clickedSort(sortValue: string) {
-  //   this.router.navigate(['new2', sortValue]);
-  // }
+  clickedSort(sortValue: string) {
+    this.router.navigate(['list', sortValue]);
+  }
 
 }

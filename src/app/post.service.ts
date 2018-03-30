@@ -16,6 +16,7 @@ export class PostService {
     let topPosts: Post[] = [];
     switch(sortValue) {
       case 'new':
+      console.log(POSTS.sort(compareTimestamp).reverse())
         return POSTS.sort(compareTimestamp).reverse();
       case 'top':
       for (let i = 0; i < POSTS.length; i++) {
