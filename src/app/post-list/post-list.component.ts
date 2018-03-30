@@ -32,4 +32,8 @@ export class PostListComponent implements OnInit {
     //console.log(this.postService.getPostById(postId).downvotes)
   }
 
+  clickedSort(sortValue: string) {
+    this.posts = this.postService.sortPosts(sortValue);
+  }
+
 }

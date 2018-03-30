@@ -54,13 +54,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Program should have post detail styling similar to reddit post styling
   * Input: adapted post detail styling from reddit.com
   * Output: post detail that looks similar to reddit post detail
-  ----
 * Program should allow users to comment on articles
   * Input: from article, comment Form
   * Output: post comment to article
 * Program should timestamp posts
   * Input: when user posts, record timestamp along with post
   * Output: store timestamp and display in post list and detail
+    ----
 * Program should allow posts to be sorted by newness
   * Input: click "sort by new"
   * Output: post list page refreshes sorted by newness

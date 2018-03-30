@@ -11,6 +11,13 @@ export class PostService {
     return POSTS.sort(compareScore).reverse();
   }
 
+  sortPosts(sortValue: string) {
+    switch(sortValue) {
+      case 'new':
+        return POSTS.sort(compareTimestamp).reverse();
+    }
+  }
+
   getPostById(postId: number) {
     for (let i = 0; i < POSTS.length; i++) {
         if (POSTS[i].id === postId) {
@@ -41,6 +48,14 @@ function compareScore(a,b) {
  if (a.score < b.score)
    return -1;
  if (a.score > b.score)
+   return 1;
+ return 0;
+}
+
+function compareTimestamp(a,b) {
+ if (a.timestamp < b.timestamp)
+   return -1;
+ if (a.timestamp > b.timestamp)
    return 1;
  return 0;
 }
