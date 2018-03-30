@@ -1,14 +1,19 @@
-# Reddit
+# Faux Reddit
+
+#### _An attempt to duplicate the functionality and overall look of Reddit in Angular. 3/30/2018_
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
-## Development server
+## Installation
+* clone repository: git clone https://github.com/grepcats/faux-reddit
+* install node. if you are on a mac, use `brew install node`. Otherwise, go to https://nodejs.org/en/download/ and download/install the appropriate installer.
+* in the project directory, type
+```
+npm init
+npm install (this installs the packages and dependencies listed in the package.json file)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
@@ -60,10 +65,32 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Program should timestamp posts
   * Input: when user posts, record timestamp along with post
   * Output: store timestamp and display in post list and detail
-    ----
 * Program should allow posts to be sorted by newness
   * Input: click "sort by new"
   * Output: post list page refreshes sorted by newness
 * Program should allow posts to be sorted by "top" (highest score of that day)
   * Input: click "sort by top"
   * Output: post list page refreshes sorted by top
+
+## Further Specs
+The project will continue implementing (or attempting to implement) features of Reddit, including user authentication and associated article/comment posting, saving articles, cross-posting, link posting, other sort types, and a backing database.
+
+## Known Bugs
+No known bugs. Functionality is limited to the features listed in "Specs" above.
+
+## Support and Contact Details
+If there are any issues or questions, please contact me at kayla.renee at gmail dot com or create an issue in GitHub.
+
+## Technologies Used
+JavaScript, Node.js, npm, Bootstrap, Angular 5
+
+## License
+MIT License
+
+Copyright (c) 2018 Kayla Ondracek
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
