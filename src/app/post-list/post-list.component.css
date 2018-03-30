@@ -1,0 +1,44 @@
+.entry {
+    overflow: hidden;
+    margin-left: 3px;
+    opacity: 1;
+}
+
+div {
+    display: block;
+}
+
+.sitetable {
+    list-style-type: none;
+}
+
+.link .title {
+    font-size: medium;
+    font-weight: normal;
+    margin-bottom: 1px;
+}
+
+.thing .title {
+    color: #0000ff;
+    outline: none;
+    margin-right: .4em;
+    padding: 0px;
+    overflow: hidden;
+    unicode-bidi: isolate;
+}
+
+.tagline, .search-result-meta {
+    color: #888;
+    font-size: x-small;
+}
+
+.link .flat-list {
+    display: block;
+    padding: 1px 0;
+}
+
+.domain {
+    color: #888;
+    font-size: x-small;
+    white-space: nowrap;
+}

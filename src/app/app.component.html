@@ -14,20 +14,18 @@
         </div>
         <div class="sr-list">
           <ul class="flat-list sr-bar hover">
-            <li><a routerLink="">Home</a></li>
-            <li><span class="separator">-</span><a href="https://www.reddit.com/r/popular" class="choice">popular</a></li>
-            <li><span class="separator">-</span><a href="https://www.reddit.com/r/all" class="choice">all</a></li>
+            <li class="flat-list"><a routerLink="">Home</a></li>
+            <li class="flat-list"><span class="separator">-</span><a href="https://www.reddit.com/r/popular" class="choice">popular</a></li>
+            <li class="flat-list"><span class="separator">-</span><a href="https://www.reddit.com/r/all" class="choice">all</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div id="header-bottom-left">
-      <a class="navbar-brand" routerLink="">Faux-Reddit</a>
+      <a class="default-header" routerLink="" id="header-img">Faux-Reddit</a>
     </div>
   </div>
 
-
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="post-container">
     <router-outlet></router-outlet>
+</div>

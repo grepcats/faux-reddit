@@ -4,6 +4,10 @@
   border-bottom: 1px solid #5f99cf;
 }
 
+div {
+    display: block;
+}
+
 #sr-header-area {
     background-color: #f0f0f0;
     white-space: nowrap;
@@ -65,4 +69,31 @@ ul {
 
 #header-bottom-left {
     font-size: larger;
+}
+
+#header-img.default-header {
+    text-indent: -9999px;
+    background-image: url(https://www.redditstatic.com/sprite-reddit.bTLvdEETokI.png);
+    background-position: 0px -1323px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 120px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 3px;
+}
+
+#header-img {
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #369;
+}
+
+.post-container {
+  border: 1px solid #D3D3D3;
+  margin: 15px 0px 15px 10px;
 }
