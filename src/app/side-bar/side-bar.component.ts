@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class SideBarComponent implements OnInit {
 
   @Output() clickNew = new EventEmitter();
+  @Input() sortClickValue: String = "";
 
   goToNewPost() {
     this.router.navigate(['new']);

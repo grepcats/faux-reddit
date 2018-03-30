@@ -21,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'new',
     component: NewPostComponent
+  },
+  {
+    path: 'list/:sortValue',
+    component: PostListComponent
   }
 ];
 
