@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
+import { Router } from '@angular/router';
 
 let currentId: number = 5;
 
@@ -24,6 +25,10 @@ export class NewPostComponent implements OnInit {
     console.log(newPost);
     this.postService.addPost(newPost);
     currentId += 1;
+  }
+
+  goHome() {
+    this.router.navigate(['posts', clickedPost.id]);
   }
 
 }
