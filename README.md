@@ -45,3 +45,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Program should allow user to "upvote" or "downvote" an article
   * Input: User clicks respective arrow
   * Output: respective arrow click is recorded on article object
+* Program should allow user to click "my subreddits" to see subreddits that are available to them
+  * Input: click "my subreddits"
+  * Output: menu of subreddits
