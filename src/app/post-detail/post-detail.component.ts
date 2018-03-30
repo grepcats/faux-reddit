@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-detail',
@@ -18,7 +19,8 @@ export class PostDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private postService: PostService
+    private postService: PostService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,5 +30,4 @@ export class PostDetailComponent implements OnInit {
 
     this.postToDisplay = this.postService.getPostById(this.postId);
   }
-
 }
