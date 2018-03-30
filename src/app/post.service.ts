@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Post } from './models/post.model';
 import { POSTS } from './mock-posts';
 
+const today = new Date;
 @Injectable()
 export class PostService {
 
@@ -15,6 +16,13 @@ export class PostService {
     switch(sortValue) {
       case 'new':
         return POSTS.sort(compareTimestamp).reverse();
+      case 'top':
+      for (let i = 0; i < POSTS.length; i++) {
+        let timePassage = today - POSTS[i].timestamp);
+
+        if((today - POSTS[i].timestamp)/1000/60/60 <= 24 )
+      }
+        return POSTS.sort(compareScore).reverse();
     }
   }
 
@@ -56,6 +64,14 @@ function compareTimestamp(a,b) {
  if (a.timestamp < b.timestamp)
    return -1;
  if (a.timestamp > b.timestamp)
+   return 1;
+ return 0;
+}
+
+function compareUpvotes(a,b) {
+ if (a.upvotes < b.upvotes)
+   return -1;
+ if (a.upvotes > b.upvotes)
    return 1;
  return 0;
 }
