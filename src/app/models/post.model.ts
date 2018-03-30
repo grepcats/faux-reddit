@@ -9,7 +9,9 @@ export class Post {
     public title: string,
     public postText: string,
     public upvotes: number,
-    public downvotes: number){}
+    public downvotes: number,
+    public timestamp: Date
+  ){}
 
     updateScore() {
       this.score = this.upvotes - this.downvotes;
