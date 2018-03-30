@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
+
 let currentId: number = 5;
 
 @Component({

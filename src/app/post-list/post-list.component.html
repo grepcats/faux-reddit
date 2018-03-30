@@ -1,4 +1,16 @@
 <div class="entry" *ngFor="let post of posts">
+  <div class="side-arrows">
+    <div class="arrow up" (click)="clickedUpvote(post.id)">
+    </div>
+    <div class="score">
+      {{post.upvotes-post.downvotes}}
+    </div>
+    <div class="arrow down" (click)="clickedDownvote(post.id)">
+    </div>
+  </div>
+  <div class="side-img">
+    <img src="../assets/img/default.gif"/>
+  </div>
   <div class="top-matter">
       <p class="title">
         <a class="title" (click)="goToDetailPage(post)">{{post.title}}</a>

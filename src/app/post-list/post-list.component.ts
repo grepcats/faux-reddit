@@ -22,4 +22,14 @@ export class PostListComponent implements OnInit {
     this.posts = this.postService.getPosts();
   }
 
+  clickedUpvote(postId: number) {
+    this.postService.upvotePostById(postId);
+  //  console.log(this.postService.getPostById(postId).upvotes)
+  }
+
+  clickedDownvote(postId: number) {
+    this.postService.downvotePostById(postId);
+    //console.log(this.postService.getPostById(postId).downvotes)
+  }
+
 }

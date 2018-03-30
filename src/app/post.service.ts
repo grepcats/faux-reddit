@@ -23,4 +23,14 @@ export class PostService {
     POSTS.push(newPost);
   }
 
+  upvotePostById(postId: number) {
+    let upvotedPost: Post = this.getPostById(postId);
+    upvotedPost.upvotes++;
+  }
+
+  downvotePostById(postId: number) {
+    let downvotedPost: Post = this.getPostById(postId);
+    downvotedPost.downvotes++;
+  }
+
 }
