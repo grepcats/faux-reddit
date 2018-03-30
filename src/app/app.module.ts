@@ -10,6 +10,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NewPostComponent } from './new-post/new-post.component';
     PostListComponent,
     PostDetailComponent,
     EditPostComponent,
-    NewPostComponent
+    NewPostComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,

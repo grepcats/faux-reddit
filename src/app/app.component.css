@@ -1,3 +1,16 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.side {
+    background-color: white;
+    margin: 0px 5px 0 5px;
+    width: 300px;
+    max-width: 300px;
+}
+
 #header {
   background-color: #cee3f8;
   position: relative;
@@ -30,7 +43,7 @@ div {
 }
 
 .dropdown {
-    cursor: default;
+    cursor: pointer;
     display: inline;
     position: relative;
 }
@@ -96,4 +109,5 @@ a {
 .post-container {
   border: 1px solid #D3D3D3;
   margin: 15px 0px 15px 10px;
+  width: 100%;
 }

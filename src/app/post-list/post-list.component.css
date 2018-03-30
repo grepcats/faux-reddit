@@ -32,6 +32,10 @@ div {
     font-size: x-small;
 }
 
+.title {
+  cursor: pointer;
+}
+
 .link .flat-list {
     display: block;
     padding: 1px 0;
