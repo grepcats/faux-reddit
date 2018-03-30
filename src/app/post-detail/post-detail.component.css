@@ -59,3 +59,9 @@ img {
   padding: 10px;
   margin-right: 10px;
 }
+
+.timestamp {
+  font-size: small;
+  font-style: italic;
+  color: #B8B8B8;
+}

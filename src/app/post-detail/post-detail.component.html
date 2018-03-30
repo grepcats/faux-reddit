@@ -26,3 +26,14 @@
   <button class="btn btn-primary" routerLink="/posts/{{postToDisplay.id}}/edit">Edit</button>
 
 </div>
+<div class="comment-section">
+  <div class="new-comment">
+    <label for="comment-text">Comment</label>
+    <textarea name="comment-text" #commentText></textarea>
+    <button (click)="addComment(commentText.value)">save</button>
+  </div>
+  <div class="the-comments">
+    <p *ngFor="let comment of comments">{{comment.text}} <span class="timestamp">{{comment.timestamp}}</span></p>
+
+  </div>
+</div>

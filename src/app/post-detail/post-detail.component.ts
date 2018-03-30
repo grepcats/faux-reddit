@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
+import { Comment } from '../models/comment.model';
 
 @Component({
   selector: 'app-post-detail',
@@ -15,6 +16,7 @@ export class PostDetailComponent implements OnInit {
 
   postId: number;
   postToDisplay: Post;
+  comments: Comment[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -39,5 +41,13 @@ export class PostDetailComponent implements OnInit {
   clickedDownvote(postId: number) {
     this.postService.downvotePostById(postId);
     //console.log(this.postService.getPostById(postId).downvotes)
+  }
+
+  addComment(commentText: string) {
+    let timestamp = new Date;
+    let newComment = new Comment(this.postToDisplay.id, commentText, timestamp);
+    console.log(newComment);
+    this.comments.push(newComment);
+    console.log(this.comments);
   }
 }

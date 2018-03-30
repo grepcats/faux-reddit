@@ -1,3 +1,3 @@
 export class Comment {
-  constructor(public text: string, public timestamp: string){}
+  constructor(public postId: number, public text: string, public timestamp: Date){}
 }
