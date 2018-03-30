@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Post } from '../models/post.model';
+import { Router } from '@angular/router';
+
+// import { Router } from '@angular/router';
+// import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -7,7 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
-  constructor() { }
+  @Output() clickNew = new EventEmitter();
+
+  goToNewPost() {
+    this.router.navigate(['new']);
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

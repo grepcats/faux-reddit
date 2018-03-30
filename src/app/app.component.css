@@ -111,3 +111,8 @@ a {
   margin: 15px 0px 15px 10px;
   width: 100%;
 }
+
+.side {
+  border: 1px solid #D3D3D3;
+  margin: 15px;
+}
