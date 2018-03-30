@@ -30,4 +30,14 @@ export class PostDetailComponent implements OnInit {
 
     this.postToDisplay = this.postService.getPostById(this.postId);
   }
+
+  clickedUpvote(postId: number) {
+    this.postService.upvotePostById(postId);
+  //  console.log(this.postService.getPostById(postId).upvotes)
+  }
+
+  clickedDownvote(postId: number) {
+    this.postService.downvotePostById(postId);
+    //console.log(this.postService.getPostById(postId).downvotes)
+  }
 }
