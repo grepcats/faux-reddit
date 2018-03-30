@@ -106,6 +106,20 @@ a {
     color: #369;
 }
 
+.tabmenu {
+    list-style-type: none;
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 5px;
+    vertical-align: bottom;
+}
+
+.tabmenu li {
+    display: inline;
+    font-weight: bold;
+    margin: 0px 3px;
+}
+
 .post-container {
   border: 1px solid #D3D3D3;
   margin: 15px 0px 15px 10px;
