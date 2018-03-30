@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Specs
+* Program should list articles
+  * Input: arrive on front page
+  * Output: view list of existing articles
+* Program should allow user to click on article to see details
+  * Input: Click on articles
+  * Output: view full article details
+* Program should allow user to navigate back to the full list of articles
+  * Input: Click on home page icon
+  * Output: Return to list of articles
+* Program should allow user to post an article (title, optional text, choose where to post (profile or subreddit), upvotes, downvotes)
+  * Input: Click "new article"
+  * Output: Article is added to the list of articles
+* Program should allow user to edit an article (any article for now)
+  * Input: Click "edit article"
+  * Output: User may update article.
+* Program should allow user to "upvote" or "downvote" an article
+  * Input: User clicks respective arrow
+  * Output: respective arrow click is recorded on article object
