@@ -1,0 +1,24 @@
+.red {
+  color: red;
+}
+
+textarea {
+  font-size: 100%;
+  width: 80%;
+  padding: 3px;
+  margin: 10px;
+  border: 1px solid gray;
+}
+
+.roundfield {
+  font-size: large;
+  width: 90%;
+  background-color: #cee3f8;
+  border-radius: 4px;
+  padding: 5px 10px 10px 10px;
+  font-size: large;
+}
+
+.panel-default {
+  margin: 15px;
+}

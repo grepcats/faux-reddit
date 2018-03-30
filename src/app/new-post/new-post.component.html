@@ -1,3 +1,18 @@
-<p>
-  new-post works!
-</p>
+<p>submit to reddit</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">You are submitting a text-based post. Speak your mind. A title is required, but expanding further in the text field is not. Beginning your title with "vote up if" is violation of intergalactic law.
+  </div>
+</div>
+
+<div class="panel panel-default roundfield">
+  <div class="form-group">
+    <span class="title roundfield"><span class="red">*</span>title</span><br>
+    <textarea #newTitle name="title" class="title"></textarea>
+  </div>
+  <div class="form-group">
+    <span class="title roundfield">text (optional)</span><br>
+    <textarea #newText name="text" class="text"></textarea>
+  </div>
+  <button (click)="submitForm(newTitle.value, newText.value)">Add</button>
+
+</div>

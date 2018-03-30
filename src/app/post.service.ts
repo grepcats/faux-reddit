@@ -19,4 +19,8 @@ export class PostService {
     }
   }
 
+  addPost(newPost: Post) {
+    POSTS.push(newPost);
+  }
+
 }
