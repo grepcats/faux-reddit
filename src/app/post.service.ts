@@ -14,7 +14,6 @@ export class PostService {
   }
 
   getPosts() {
-    console.log(this.posts)
     this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}});
 
     return this.posts;
