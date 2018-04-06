@@ -11,10 +11,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'faux reddit';
-  // @Output() sortClickValue = new EventEmitter();
-  // clickedSort(sortValue: string) {
-  //   this.sortClickValue.emit(sortValue);
-  // }
 
   constructor(private router: Router){}
 

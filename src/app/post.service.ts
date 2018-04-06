@@ -28,9 +28,8 @@ export class PostService {
         this.posts = this.database.list(`posts`, {query: {orderByChild: 'serverTimestamp'}});
         return this.posts;
       case 'top':
-      let today = firebase.database.ServerValue.TIMESTAMP;
-      //OrderByValue
-        this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}})
+        this.posts = this.database.list(`posts`, {query: {orderByChild: 'score', limitToFirst: 2}});
+        return this.posts;
 
     }
     // let topPosts: Post[] = [];

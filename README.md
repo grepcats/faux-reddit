@@ -79,6 +79,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Refactor displaying comments to use firebase
 * Refactor date storage and display
 * Refactor sorting for new dates
+* Fix up/downvoting
+* Deploy
 * Implement categories/subreddits
 * User authentication
 * Associate users with posts/comments
