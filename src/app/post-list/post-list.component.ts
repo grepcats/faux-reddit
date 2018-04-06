@@ -32,21 +32,22 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.sortValue = urlParameters['sortValue'];
-  //     console.log(this.sortValue)
-  //     if (this.sortValue) {
-  //       this.posts = this.postService.sortPosts(this.sortValue);
-  //     } else {
-  //       this.posts = this.postService.getPosts();
-  //     }
     });
     if (!this.sortValue) {
       this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
         this.posts = dataLastEmittedFromObserver.reverse();
+        this.posts.forEach(function(post){
+          post.serverTimestamp = new Date(post.serverTimestamp).toString();
+        });
       });
     } else {
       this.postService.sortPosts(this.sortValue).subscribe(dataLastEmittedFromObserver => {
         this.posts = dataLastEmittedFromObserver.reverse();
+        this.posts.forEach(function(post){
+          post.serverTimestamp = new Date(post.serverTimestamp).toString();
+        });
       });
+
 
   }
 
