@@ -19,10 +19,6 @@ export class SubredditService {
     return this.database.object('subreddits/' + subredditId);
   }
 
-  getPostsBySubId(subredditId: string) {
-    // return this.database.list()
-  }
-
   getSubredditByName(subName: string): FirebaseListObservable<any[]>{
       return this.database.list(`subreddits`, {query: {orderByChild: 'username', equalTo: subName}});
   }

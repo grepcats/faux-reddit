@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     component: PostListComponent
   },
   {
-    path: 'subreddits/:subId',
+    path: 'subreddits/:subName',
     component: SubredditDetailComponent
   }
 ];

@@ -37,9 +37,9 @@ export class PostListComponent implements OnInit {
       this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
         this.posts = dataLastEmittedFromObserver.reverse();
         console.log(this.posts);
-        // this.posts.forEach(function(post){
-        //   post.serverTimestamp = new Date(post.serverTimestamp).toString();
-        // });
+        this.posts.forEach(function(post){
+          post.serverTimestamp = new Date(post.serverTimestamp).toString();
+        });
       });
 
     } else {

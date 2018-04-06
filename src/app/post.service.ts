@@ -6,21 +6,15 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 export class PostService {
-  testposts: Post[] = []
   posts: FirebaseListObservable<any[]>;
   subredditPosts: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.testposts = database.list('posts');
+    this.posts = database.list('posts');
   }
 
   getPosts() {
-    this.database.list(`posts`).forEach(subreddit => {
-      subreddit.forEach(post => {
-        this.posts.push(post)
-      });
-    });
-    //this.database.list(`posts`, {query: {orderByChild: 'score'}});
+    this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}});
     return this.posts;
 
   }
@@ -41,10 +35,13 @@ export class PostService {
     return this.database.object('posts/' + postId);
   }
 
+  getPostsBySubTitle(subTitle: string) {
+    return this.database.list(`posts`, {query: {orderByChild: 'postedTo', equalTo: subTitle}})
+  }
+
   addPost(newPost: Post) {
     newPost.serverTimestamp = firebase.database.ServerValue.TIMESTAMP;
-    // this.posts.push(newPost);
-    this.database.list(`posts/${newPost.postedTo}`).push(newPost);
+    this.posts.push(newPost);
   }
 
   updatePostInDb(localUpdatedPost) {
