@@ -37,9 +37,8 @@ export class PostService {
 
   addPost(newPost: Post) {
     newPost.serverTimestamp = firebase.database.ServerValue.TIMESTAMP;
-    let subredditId = 
     this.posts.push(newPost);
-    this.database.list(`posts/${subredditId}`).push(newPost);
+    this.database.list(`posts/${newPost.postedTo}`).push(newPost);
   }
 
   updatePostInDb(localUpdatedPost) {

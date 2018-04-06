@@ -6,6 +6,7 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class SubredditService {
   subreddits: FirebaseListObservable<any[]>;
+  posts: FirebaseListObservable<any[]>;
 
   constructor(public database: AngularFireDatabase) { }
 
@@ -16,6 +17,14 @@ export class SubredditService {
 
   getSubredditById(subredditId: string) {
     return this.database.object('subreddits/' + subredditId);
+  }
+
+  getPostsBySubId(subredditId: string) {
+    // return this.database.list()
+  }
+
+  getSubredditByName(subName: string): FirebaseListObservable<any[]>{
+      return this.database.list(`subreddits`, {query: {orderByChild: 'username', equalTo: subName}});
   }
 
 }

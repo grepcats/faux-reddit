@@ -30,7 +30,7 @@ export class AppComponent {
   }
 
   goToSubreddit(subreddit) {
-    this.router.navigate(['subreddit', subreddit.$key])
+    this.router.navigate(['subreddits', subreddit.$key])
   }
 
 }

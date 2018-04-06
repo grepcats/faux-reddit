@@ -16,9 +16,9 @@
   <div class="form-group">
     <span class="title roundfield"><span class="red">*</span>choose where to post</span><br>
     <select #newSubreddit>
-      <option value="AskReddit">AskReddit</option>
-      <option value="Politics">Politics</option>
-      <option value="Funny">Funny</option>
+      <option value="0">AskReddit</option>
+      <option value="1">Politics</option>
+      <option value="2">Funny</option>
     </select>
   </div>
   <button (click)="submitForm(newTitle.value, newText.value, newSubreddit.value)">Add</button>
