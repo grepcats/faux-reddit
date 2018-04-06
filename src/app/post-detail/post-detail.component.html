@@ -34,7 +34,7 @@
   <div class="the-comments">
     <h3>Comments</h3>
     <p *ngFor="let comment of comments">{{comment?.text}} <span class="timestamp">{{comment?.timestamp}}</span></p>
-    <p *ngIf="comments.length === 0" class="red">There doesn't seem to be anything here...</p>
+    <p *ngIf="comments?.length === 0" class="red">There doesn't seem to be anything here...</p>
 
   </div>
 </div>
