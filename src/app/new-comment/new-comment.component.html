@@ -1,5 +1,5 @@
 <div class="new-comment">
-  <label for="comment-text">Comment</label>
-  <textarea name="comment-text" #commentText></textarea>
-  <button (click)="addComment(commentText.value); commentText.value=''" class="btn btn-primary">save</button>
+  <label for="comment-text">Comment</label><br>
+  <textarea class="comment-field" name="comment-text" #commentText></textarea><br>
+  <button class="comment-button" (click)="addComment(commentText.value); commentText.value=''" class="btn btn-primary">save</button>
 </div>

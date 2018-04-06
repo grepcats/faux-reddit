@@ -51,6 +51,14 @@ img {
   color: #c6c6c6;
   font-weight: bold;
 }
+.post {
+  width: 100%
+}
+
+.post-title {
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
 
 .text-body {
   border: 1px solid #369;
@@ -58,10 +66,15 @@ img {
   background-color: #fafafa;
   padding: 10px;
   margin-right: 10px;
+  width: 90%;
 }
 
 .timestamp {
   font-size: small;
   font-style: italic;
   color: #B8B8B8;
+}
+
+.the-comments {
+  margin-left: 20px;
 }

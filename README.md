@@ -1,11 +1,28 @@
 # Faux Reddit
 
-#### _An attempt to duplicate the functionality and overall look of Reddit in Angular. 3/30/2018_
+#### _An attempt to duplicate the functionality and overall look of Reddit in Angular. 4/6/2018_
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+## Access
+The functioning application may be found here: https://f-reddit.firebaseapp.com
 
 ## Installation
+If you'd like to install a version of this yourself rather than using the hosted site, please use the following instructions
+
 * clone repository: git clone https://github.com/grepcats/faux-reddit
+* Set up a firebase account at https://firebase.google.com.
+  * Add project
+  * Add "api-keys.ts" file to the src/app directory
+  * Add the following to that file:
+  ```
+  export let masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };
+  ```
+  Except use the credentials provided to you by firebase (find by "Add Firebase to your web app" on the firebase console)
 * install node. if you are on a mac, use `brew install node`. Otherwise, go to https://nodejs.org/en/download/ and download/install the appropriate installer.
 * in the project directory, type
 ```
@@ -68,36 +85,33 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Program should allow posts to be sorted by newness
   * Input: click "sort by new"
   * Output: post list page refreshes sorted by newness
-* Program should allow posts to be sorted by "top" (highest score of that day)
-  * Input: click "sort by top"
-  * Output: post list page refreshes sorted by top
-//Friday 2
-* Program will implement firebase
+* Program will implement firebase to store posts and Comments
+  * Input: post/comment data
+  * Output: post/comment data from database rather than stored objects
 * Refactor saving posts to use firebase
 * Refactor displaying posts to use firebase
 * Refactor saving comments to use firebase
 * Refactor displaying comments to use firebase
-* Refactor date storage and display (sorting is broken)
-* Refactor sorting for new dates (sorting is broken)
-* Fix up/downvoting
-* Deploy
+* Refactor date storage and display
+* Refactor sorting for new dates
+* Refactor up/down-voting
 * Refactor edit post functionality
-* Implement categories/subreddits
-* User authentication
-* Associate users with posts/comments
-* Allow users to delete own posts only
-* Allow users to edit own posts only
-* Save articles
-
+* Program will be deployed to firebase so that it is accessible to users
+  * Input: App
+  * Output: https://f-reddit.firebaseapp.com
 
 ## Known Bugs
-No known bugs. Functionality is limited to the features listed in "Specs" above.
+Functionality is limited to the features listed in "Specs" above. There is no subreddit functionality at this time, although users may select a "subreddit" to post to while creating a post.
+
+Using up/down-voting currently breaks sort order for sort-by new and default page sort (by post score).
+
+Please report other bugs by submitting an issue on GitHub.
 
 ## Support and Contact Details
 If there are any issues or questions, please contact me at kayla.renee at gmail dot com or create an issue in GitHub.
 
 ## Technologies Used
-JavaScript, Node.js, npm, Bootstrap, Angular 5
+JavaScript, Node.js, npm, Bootstrap, Angular 5, Firebase
 
 ## License
 MIT License
