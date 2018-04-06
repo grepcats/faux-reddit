@@ -88,6 +88,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Program will implement firebase to store posts and Comments
   * Input: post/comment data
   * Output: post/comment data from database rather than stored objects
+* Program will be deployed to firebase so that it is accessible to users
+  * Input: App
+  * Output: https://f-reddit.firebaseapp.com
+
+
 * Refactor saving posts to use firebase
 * Refactor displaying posts to use firebase
 * Refactor saving comments to use firebase
@@ -96,14 +101,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Refactor sorting for new dates
 * Refactor up/down-voting
 * Refactor edit post functionality
-* Program will be deployed to firebase so that it is accessible to users
-  * Input: App
-  * Output: https://f-reddit.firebaseapp.com
+*
 
 ## Known Bugs
-Functionality is limited to the features listed in "Specs" above. There is no subreddit functionality at this time, although users may select a "subreddit" to post to while creating a post.
-
-Using up/down-voting currently breaks sort order for sort-by new and default page sort (by post score).
+* Functionality is limited to the features listed in "Specs" above. There is no subreddit functionality at this time, although users may select a "subreddit" to post to while creating a post.
+* Using up/down-voting currently breaks sort order for sort-by new and default page sort (by post score).
+* App does not work with browser back/forward navigation arrows.
 
 Please report other bugs by submitting an issue on GitHub.
 
