@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { Location } from '@angular/common';
 import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
@@ -50,6 +50,10 @@ export class PostListComponent implements OnInit {
     }
   }
 
+  // ngDoCheck() {
+  //   this.ngOnInit();
+  // }
+
   clickedUpvote(localPost: Post) {
     localPost.upvotes++;
     localPost.score = localPost.upvotes-localPost.downvotes;
@@ -60,5 +64,6 @@ export class PostListComponent implements OnInit {
     localPost.downvotes++;
     localPost.score = localPost.upvotes-localPost.downvotes;
     this.postService.updatePostInDb(localPost);
+
   }
 }

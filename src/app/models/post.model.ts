@@ -12,8 +12,4 @@ export class Post {
     public downvotes: number,
   ){}
 
-    updateScore() {
-      this.score = this.upvotes - this.downvotes;
-    }
-
 }

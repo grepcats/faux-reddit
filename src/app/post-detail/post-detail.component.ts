@@ -41,14 +41,17 @@ export class PostDetailComponent implements OnInit {
     });
   }
 
-  clickedUpvote(postId: number) {
-    this.postService.upvotePostById(postId);
-  //  console.log(this.postService.getPostById(postId).upvotes)
+  clickedUpvote(localPost: Post) {
+    localPost.upvotes++;
+    localPost.score = localPost.upvotes-localPost.downvotes;
+    this.postService.updatePostInDb(localPost);
+
   }
 
-  clickedDownvote(postId: number) {
-    this.postService.downvotePostById(postId);
-    //console.log(this.postService.getPostById(postId).downvotes)
+  clickedDownvote(localPost: Post) {
+    localPost.downvotes++;
+    localPost.score = localPost.upvotes-localPost.downvotes;
+    this.postService.updatePostInDb(localPost);
   }
 
 
