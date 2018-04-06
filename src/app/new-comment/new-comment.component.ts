@@ -23,7 +23,7 @@ export class NewCommentComponent implements OnInit {
 
   addComment(commentText: string) {
     let timestamp = new Date;
-    this.commentService.addComment((new Comment(commentText, timestamp)), this.postId)
+    this.commentService.addComment((new Comment(commentText, timestamp.toString())), this.postId)
   }
 
 }

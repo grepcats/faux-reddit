@@ -9,17 +9,11 @@ export class Post {
     public postText: string,
     public upvotes: number,
     public downvotes: number,
-    public timestamp: Date
+    public timestamp: string
   ){}
 
     updateScore() {
       this.score = this.upvotes - this.downvotes;
     }
 
-    // addComment(commentText: string) {
-    //   let timestamp = new Date;
-    //   let newComment = new Comment(commentText, timestamp);
-    //   this.allComments.push(newComment);
-    //   console.log(this.allComments);
-    // }
 }
