@@ -39,9 +39,15 @@ export class PostListComponent implements OnInit {
   //       this.posts = this.postService.getPosts();
   //     }
     });
-    this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
-      this.posts = dataLastEmittedFromObserver;
-    });
+    if (!this.sortValue) {
+      this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
+        this.posts = dataLastEmittedFromObserver.reverse();
+      });
+    } else {
+      this.postService.sortPosts(this.sortValue).subscribe(dataLastEmittedFromObserver => {
+        this.posts = dataLastEmittedFromObserver.reverse();
+      });
+
   }
 
   // clickedUpvote(postId: number) {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from './models/post.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import * as firebase from 'firebase/app';
 
 let today = +new Date();
 @Injectable()
@@ -13,11 +14,18 @@ export class PostService {
   getPosts() {
     //return POSTS.sort(compareScore).reverse();
     console.log(this.posts)
+    this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}});
+
     return this.posts;
 
   }
 
   sortPosts(sortValue: string) {
+    switch(sortValue) {
+      case 'new':
+      this.posts = this.database.list(`posts`, {query: {orderByChild: 'serverTimestamp'}});
+      return this.posts;
+    }
     // let topPosts: Post[] = [];
     // switch(sortValue) {
     //   case 'new':
@@ -41,6 +49,7 @@ export class PostService {
 
   addPost(newPost: Post) {
     //POSTS.push(newPost);
+    newPost.serverTimestamp = firebase.database.ServerValue.TIMESTAMP;
     this.posts.push(newPost);
   }
 
