@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class EditPostComponent implements OnInit {
 
-  postId: number;
+  postId: string;
   postToEdit: Post;
 
   constructor(
@@ -23,10 +23,17 @@ export class EditPostComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.postId = parseInt(urlParameters['id']);
+      this.postId = urlParameters['id'];
     });
 
-    // this.postToEdit = this.postService.getPostById(this.postId);
+    this.postService.getPostById(this.postId).subscribe(dataLastEmittedFromObserver => {
+      this.postToEdit = dataLastEmittedFromObserver;
+    });
+
+  }
+
+  doneEditing() {
+    this.postService.updatePostInDb(this.postToEdit);
   }
 
 

@@ -8,5 +8,5 @@
     <label for="text">Text</label>
     <input class="form-control" [(ngModel)]="postToEdit.postText">
   </div>
-  <button routerLink="/posts/{{postToEdit.id}}" class="btn btn-info">Done</button>
+  <button routerLink="/posts/{{postToEdit.$key}}" (click)="doneEditing()" class="btn btn-info">Done</button>
 </div>

@@ -23,7 +23,7 @@
 
   <p>{{postToDisplay?.postedTo}}</p>
 
-  <button class="btn btn-primary" routerLink="/posts/{{postToDisplay?.id}}/edit">Edit</button>
+  <button class="btn btn-primary" routerLink="/posts/{{postToDisplay?.$key}}/edit">Edit</button>
 
 </div>
 <div class="comment-section">
