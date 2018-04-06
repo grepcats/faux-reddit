@@ -5,7 +5,7 @@
     <div id="sr-header-area">
       <div class="width-clip">
         <div class="dropdown srdrop">
-          <span class="selected title">my subreddits <span class="glyphicon glyphicon-chevron-down"></span></span>
+          <span class="selected title">my subreddits</span>
         </div>
         <div class="drop-choices srdrop">
           <!-- <a href="https://www.reddit.com/r/AskReddit/" class="choice">AskReddit</a>
@@ -15,8 +15,7 @@
         <div class="sr-list">
           <ul class="flat-list sr-bar hover">
             <li class="flat-list"><a routerLink="">Home</a></li>
-            <li class="flat-list"><span class="separator">-</span><a href="https://www.reddit.com/r/popular" class="choice">popular</a></li>
-            <li class="flat-list"><span class="separator">-</span><a href="https://www.reddit.com/r/all" class="choice">all</a></li>
+            <li class="flat-list" *ngFor="let subreddit of subreddits"><span class="separator">-</span><span class="choice" (click)="goToSubreddit(subreddit)">{{subreddit?.title}}</span></li>
           </ul>
         </div>
       </div>
@@ -25,7 +24,6 @@
       <a class="default-header" routerLink="" id="header-img">Faux-Reddit</a>
       <ul class="tabmenu">
         <li (click)="clickedSort('new')">new</li>
-        <!-- <li (click)="clickedSort('top')">top</li> -->
       </ul>
     </div>
   </div>

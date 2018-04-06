@@ -4,3 +4,7 @@
 li:hover {
   cursor: pointer;
 }
+
+.choice:hover {
+  cursor: pointer;
+}

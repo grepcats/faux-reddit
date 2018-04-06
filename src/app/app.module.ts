@@ -13,6 +13,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { NewCommentComponent } from './new-comment/new-comment.component';
+import { SubredditListComponent } from './subreddit-list/subreddit-list.component';
+import { SubredditDetailComponent } from './subreddit-detail/subreddit-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,6 +32,8 @@ export const firebaseConfig = {
     NewPostComponent,
     SideBarComponent,
     NewCommentComponent,
+    SubredditListComponent,
+    SubredditDetailComponent,
   ],
   imports: [
     BrowserModule,

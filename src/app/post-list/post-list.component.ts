@@ -50,10 +50,6 @@ export class PostListComponent implements OnInit {
     }
   }
 
-  // ngDoCheck() {
-  //   this.ngOnInit();
-  // }
-
   clickedUpvote(localPost: Post) {
     localPost.upvotes++;
     localPost.score = localPost.upvotes-localPost.downvotes;

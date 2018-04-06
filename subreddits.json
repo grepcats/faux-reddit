@@ -1,0 +1,14 @@
+{ "subreddits": [{
+  "title": "AskReddit",
+  "description": "",
+  "rules": ["You must post a clear and direct question in the title. The title may contain two, short, necessary context sentences. No text is allowed in the textbox. Your thoughts/responses to the question can go in the comments section.", "Any post asking for advice should be generic and not specific to your situation alone", "Askreddit is for open-ended discussion questions"]
+  }, {
+  "title": "Politics",
+  "description": "/r/politics is the subreddit for current and explicitly political U.S. news.",
+  "rules": ["Be civil.", "Do not post users' personal information.", "Vote based on quality, not opinion."]
+  }, {
+    "title": "Funny",
+    "description": "You may only post if you are funny.",
+    "rules": ["All posts must make an attempt at humor.", "No reaction, MRW, HIFW, or 'me IRL' posts.", "No posts with their sole purpose being to communicate with another redditor"]
+  }]
+}

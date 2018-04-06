@@ -20,8 +20,9 @@ export class NewPostComponent implements OnInit {
   }
 
 
-  submitForm(title: string, text: string) {
+  submitForm(title: string, text: string, subreddit: string) {
     let newPost: Post = new Post(title, text, 0, 0);
+    newPost.postedTo = subreddit;
 
     this.postService.addPost(newPost);
     this.goHome();

@@ -7,7 +7,7 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class PostService {
   posts: FirebaseListObservable<any[]>;
-  today = firebase.database.ServerValue.TIMESTAMP
+  subredditPosts: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
     this.posts = database.list('posts');
@@ -15,7 +15,6 @@ export class PostService {
 
   getPosts() {
     this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}});
-
     return this.posts;
 
   }
@@ -37,9 +36,10 @@ export class PostService {
   }
 
   addPost(newPost: Post) {
-    //POSTS.push(newPost);
     newPost.serverTimestamp = firebase.database.ServerValue.TIMESTAMP;
+    let subredditId = 
     this.posts.push(newPost);
+    this.database.list(`posts/${subredditId}`).push(newPost);
   }
 
   updatePostInDb(localUpdatedPost) {
