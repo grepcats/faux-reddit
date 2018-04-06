@@ -14,8 +14,8 @@ import { Comment } from '../models/comment.model';
 })
 export class PostDetailComponent implements OnInit {
 
-  postId: number;
-  postToDisplay: Post;
+  postId: string;
+  postToDisplay;
   comments: Comment[] = [];
 
   constructor(
@@ -27,9 +27,12 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.postId = parseInt(urlParameters['id']);
+      this.postId = urlParameters['id'];
     });
-    
+
+    this.postService.getPostById(this.postId).subscribe(dataLastEmittedFromObserver => {
+      this.postToDisplay = dataLastEmittedFromObserver;
+    });
 
     // this.postToDisplay = this.postService.getPostById(this.postId);
   }
