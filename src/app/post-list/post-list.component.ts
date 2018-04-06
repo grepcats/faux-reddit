@@ -36,10 +36,12 @@ export class PostListComponent implements OnInit {
     if (!this.sortValue) {
       this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
         this.posts = dataLastEmittedFromObserver.reverse();
-        this.posts.forEach(function(post){
-          post.serverTimestamp = new Date(post.serverTimestamp).toString();
-        });
+        console.log(this.posts);
+        // this.posts.forEach(function(post){
+        //   post.serverTimestamp = new Date(post.serverTimestamp).toString();
+        // });
       });
+
     } else {
       this.postService.sortPosts(this.sortValue).subscribe(dataLastEmittedFromObserver => {
         this.posts = dataLastEmittedFromObserver.reverse();

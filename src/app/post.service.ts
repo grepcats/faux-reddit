@@ -6,15 +6,21 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 export class PostService {
+  testposts: Post[] = []
   posts: FirebaseListObservable<any[]>;
   subredditPosts: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.posts = database.list('posts');
+    this.testposts = database.list('posts');
   }
 
   getPosts() {
-    this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}});
+    this.database.list(`posts`).forEach(subreddit => {
+      subreddit.forEach(post => {
+        this.posts.push(post)
+      });
+    });
+    //this.database.list(`posts`, {query: {orderByChild: 'score'}});
     return this.posts;
 
   }
@@ -37,7 +43,7 @@ export class PostService {
 
   addPost(newPost: Post) {
     newPost.serverTimestamp = firebase.database.ServerValue.TIMESTAMP;
-    this.posts.push(newPost);
+    // this.posts.push(newPost);
     this.database.list(`posts/${newPost.postedTo}`).push(newPost);
   }
 
