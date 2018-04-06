@@ -1,6 +1,4 @@
-<!-- <button (click)="clickedSort2('new')">Sort By Newness</button>
-<button (click)="clickedSort('top')">Sort By Top</button> -->
-<div class="entry" *ngFor="let post of posts">
+<div class="entry" *ngFor="let post of posts | async">
   <div class="side-arrows">
     <div class="arrow up" (click)="clickedUpvote(post.id)">
     </div>
@@ -17,6 +15,7 @@
       <p class="title">
         <a class="title" (click)="goToDetailPage(post)">{{post.title}}</a>
         <span class="domain">(<a routerLink="">{{post.postedTo}}</a>)</span>
+        <span>{{post.$key}}</span>
       </p>
       <p class="tagline">
         {{post.timestamp}}

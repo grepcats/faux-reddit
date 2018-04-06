@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Post } from './models/post.model';
-import { POSTS } from './mock-posts';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 let today = +new Date();
@@ -13,26 +12,27 @@ export class PostService {
 
   getPosts() {
     //return POSTS.sort(compareScore).reverse();
+    console.log(this.posts)
     return this.posts;
 
   }
 
   sortPosts(sortValue: string) {
-    let topPosts: Post[] = [];
-    switch(sortValue) {
-      case 'new':
-      console.log(POSTS.sort(compareTimestamp).reverse())
-        return POSTS.sort(compareTimestamp).reverse();
-      case 'top':
-      for (let i = 0; i < POSTS.length; i++) {
-        let postTimestamp = +new Date(POSTS[i].timestamp);
-        let timeElapsed = today-postTimestamp
-        if (timeElapsed/3600000 <= 24) {
-          topPosts.push(POSTS[i])
-        }
-      }
-      return topPosts.sort(compareScore).reverse();
-    }
+    // let topPosts: Post[] = [];
+    // switch(sortValue) {
+    //   case 'new':
+    //   console.log(POSTS.sort(compareTimestamp).reverse())
+    //     return POSTS.sort(compareTimestamp).reverse();
+    //   case 'top':
+    //   for (let i = 0; i < POSTS.length; i++) {
+    //     let postTimestamp = +new Date(POSTS[i].timestamp);
+    //     let timeElapsed = today-postTimestamp
+    //     if (timeElapsed/3600000 <= 24) {
+    //       topPosts.push(POSTS[i])
+    //     }
+    //   }
+    //   return topPosts.sort(compareScore).reverse();
+    // }
   }
 
   getPostById(postId: number) {

@@ -26,7 +26,7 @@ export class EditPostComponent implements OnInit {
       this.postId = parseInt(urlParameters['id']);
     });
 
-    this.postToEdit = this.postService.getPostById(this.postId);
+    // this.postToEdit = this.postService.getPostById(this.postId);
   }
 
 

@@ -30,7 +30,7 @@ export class PostDetailComponent implements OnInit {
       this.postId = parseInt(urlParameters['id']);
     });
 
-    this.postToDisplay = this.postService.getPostById(this.postId);
+    // this.postToDisplay = this.postService.getPostById(this.postId);
   }
 
   clickedUpvote(postId: number) {

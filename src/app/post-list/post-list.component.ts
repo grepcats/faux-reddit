@@ -4,6 +4,7 @@ import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-post-list',
@@ -13,7 +14,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class PostListComponent implements OnInit {
 
-  posts: Post[];
+  posts: FirebaseListObservable<any[]>
   sortValue: string;
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,10 @@ export class PostListComponent implements OnInit {
     private postService: PostService,
     private router: Router
   ) { }
+
+  getPosts() {
+    this.posts = this.postService.getPosts();
+  }
 
   goToDetailPage(clickedPost: Post) {
     // this.router.navigate(['posts', clickedPost.id]);
