@@ -46,9 +46,23 @@ export class PostListComponent implements OnInit {
         this.posts.forEach(function(post){
           post.serverTimestamp = new Date(post.serverTimestamp).toString();
         });
+        if (this.sortValue === 'top') {
+          let today = this.postService.today;
+          let filteredResults: string[] = [];
+          this.posts.forEach(function(post) {
+            if ((today-post.serverTimestamp)/3600000 <= 24) {
+              filteredResults.push(post)
+            }
+          });
+          this.posts = filteredResulst;
+        }
+        this.posts = this.postService.today;
       });
 
-
+      //     let timeElapsed = today-postTimestamp
+      //     if (timeElapsed/3600000 <= 24) {
+      //       topPosts.push(POSTS[i])
+      //     }
   }
 
   // clickedUpvote(postId: number) {

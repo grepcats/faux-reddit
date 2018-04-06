@@ -3,10 +3,12 @@ import { Post } from './models/post.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 
-let today = +new Date();
+
 @Injectable()
 export class PostService {
   posts: FirebaseListObservable<any[]>;
+  today = firebase.database.ServerValue.TIMESTAMP
+
   constructor(private database: AngularFireDatabase) {
     this.posts = database.list('posts');
   }
@@ -23,8 +25,13 @@ export class PostService {
   sortPosts(sortValue: string) {
     switch(sortValue) {
       case 'new':
-      this.posts = this.database.list(`posts`, {query: {orderByChild: 'serverTimestamp'}});
-      return this.posts;
+        this.posts = this.database.list(`posts`, {query: {orderByChild: 'serverTimestamp'}});
+        return this.posts;
+      case 'top':
+      let today = firebase.database.ServerValue.TIMESTAMP;
+      //OrderByValue
+        this.posts = this.database.list(`posts`, {query: {orderByChild: 'score'}})
+
     }
     // let topPosts: Post[] = [];
     // switch(sortValue) {
