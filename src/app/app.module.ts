@@ -12,6 +12,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { NewCommentComponent } from './new-comment/new-comment.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -28,6 +29,7 @@ export const firebaseConfig = {
     EditPostComponent,
     NewPostComponent,
     SideBarComponent,
+    NewCommentComponent,
   ],
   imports: [
     BrowserModule,

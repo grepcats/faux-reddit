@@ -16,10 +16,10 @@ export class Post {
       this.score = this.upvotes - this.downvotes;
     }
 
-    addComment(commentText: string) {
-      let timestamp = new Date;
-      let newComment = new Comment(commentText, timestamp);
-      this.allComments.push(newComment);
-      console.log(this.allComments);
-    }
+    // addComment(commentText: string) {
+    //   let timestamp = new Date;
+    //   let newComment = new Comment(commentText, timestamp);
+    //   this.allComments.push(newComment);
+    //   console.log(this.allComments);
+    // }
 }

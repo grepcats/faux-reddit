@@ -1,39 +1,36 @@
 <div>
   <div class="top-level">
     <div class="side-arrows">
-      <div class="arrow up" (click)="clickedUpvote(postToDisplay.id)">
+      <div class="arrow up" (click)="clickedUpvote(postToDisplay?.id)">
       </div>
       <div class="score">
-        {{postToDisplay.score}}
+        {{postToDisplay?.score}}
       </div>
-      <div class="arrow down" (click)="clickedDownvote(postToDisplay.id)">
+      <div class="arrow down" (click)="clickedDownvote(postToDisplay?.id)">
       </div>
     </div>
     <div class="side-img">
       <img src="../assets/img/default.gif"/>
     </div>
     <div class="post">
-      <p class="title">{{postToDisplay.title}}</p>
-      <div class="text-body" *ngIf="postToDisplay.postText != ''">
-        <p>{{postToDisplay.postText}}</p>
+      <p class="title">{{postToDisplay?.title}}</p>
+      <div class="text-body" *ngIf="postToDisplay?.postText != ''">
+        <p>{{postToDisplay?.postText}}</p>
       </div>
     </div>
   </div>
 
 
-  <p>{{postToDisplay.postedTo}}</p>
+  <p>{{postToDisplay?.postedTo}}</p>
 
-  <button class="btn btn-primary" routerLink="/posts/{{postToDisplay.id}}/edit">Edit</button>
+  <button class="btn btn-primary" routerLink="/posts/{{postToDisplay?.id}}/edit">Edit</button>
 
 </div>
 <div class="comment-section">
-  <div class="new-comment">
-    <label for="comment-text">Comment</label>
-    <textarea name="comment-text" #commentText></textarea>
-    <button (click)="postToDisplay.addComment(commentText.value)">save</button>
-  </div>
-  <div class="the-comments">
+  <app-new-comment></app-new-comment>
+
+  <!-- <div class="the-comments">
     <p *ngFor="let comment of postToDisplay.allComments">{{comment.text}} <span class="timestamp">{{comment.timestamp}}</span></p>
 
-  </div>
+  </div> -->
 </div>
