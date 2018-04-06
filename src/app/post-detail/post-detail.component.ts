@@ -29,6 +29,7 @@ export class PostDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.postId = parseInt(urlParameters['id']);
     });
+    
 
     // this.postToDisplay = this.postService.getPostById(this.postId);
   }

@@ -23,12 +23,10 @@ export class PostListComponent implements OnInit {
     private router: Router
   ) { }
 
-  getPosts() {
-    this.posts = this.postService.getPosts();
-  }
 
-  goToDetailPage(clickedPost: Post) {
+  goToDetailPage(clickedPost) {
     // this.router.navigate(['posts', clickedPost.id]);
+    this.router.navigate(['posts', clickedPost.$key])
   }
 
   ngOnInit() {
@@ -41,6 +39,7 @@ export class PostListComponent implements OnInit {
   //       this.posts = this.postService.getPosts();
   //     }
     });
+    this.posts = this.postService.getPosts();
   }
 
   // clickedUpvote(postId: number) {
