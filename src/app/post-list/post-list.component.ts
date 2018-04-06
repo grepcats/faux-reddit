@@ -25,7 +25,6 @@ export class PostListComponent implements OnInit {
 
 
   goToDetailPage(clickedPost) {
-    // this.router.navigate(['posts', clickedPost.id]);
     this.router.navigate(['posts', clickedPost.$key])
   }
 
@@ -36,7 +35,6 @@ export class PostListComponent implements OnInit {
     if (!this.sortValue) {
       this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
         this.posts = dataLastEmittedFromObserver.reverse();
-        console.log(this.posts);
         this.posts.forEach(function(post){
           post.serverTimestamp = new Date(post.serverTimestamp).toString();
         });

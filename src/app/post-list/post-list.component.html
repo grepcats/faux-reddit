@@ -12,9 +12,9 @@
     <img src="../assets/img/default.gif"/>
   </div>
   <div class="top-matter">
-      <p class="title">
+      <p>
         <a class="title" (click)="goToDetailPage(post)">{{post.title}}</a>
-        <span class="domain">(<a routerLink="">{{post.postedTo}}</a>)</span>
+        <span class="domain">({{post.postedTo}})</span>
       </p>
       <p class="tagline">
         {{post.serverTimestamp}}
