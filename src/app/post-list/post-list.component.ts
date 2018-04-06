@@ -14,7 +14,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class PostListComponent implements OnInit {
 
-  posts: FirebaseListObservable<any[]>
+  posts;
   sortValue: string;
   constructor(
     private route: ActivatedRoute,
@@ -39,7 +39,9 @@ export class PostListComponent implements OnInit {
   //       this.posts = this.postService.getPosts();
   //     }
     });
-    this.posts = this.postService.getPosts();
+    this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
+      this.posts = dataLastEmittedFromObserver;
+    });
   }
 
   // clickedUpvote(postId: number) {
