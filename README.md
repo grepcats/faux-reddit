@@ -101,7 +101,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Refactor sorting for new dates
 * Refactor up/down-voting
 * Refactor edit post functionality
-*
 
 ## Known Bugs
 * Functionality is limited to the features listed in "Specs" above. There is no subreddit functionality at this time, although users may select a "subreddit" to post to while creating a post.
