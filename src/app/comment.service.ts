@@ -12,4 +12,8 @@ export class CommentService {
     this.database.list(`comments/${postId}`).push(newComment);
   }
 
+  getCommentsByPostId(postId: string) {
+    return this.database.list(`comments/${postId}`)
+  }
+
 }

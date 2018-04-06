@@ -5,24 +5,26 @@ import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
 import { Comment } from '../models/comment.model';
+import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.css'],
-  providers: [PostService]
+  providers: [PostService, CommentService]
 })
 export class PostDetailComponent implements OnInit {
 
   postId: string;
   postToDisplay;
-  comments: Comment[] = [];
+  comments;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private postService: PostService,
-    private router: Router
+    private router: Router,
+    private commentService: CommentService
   ) { }
 
   ngOnInit() {
@@ -34,7 +36,9 @@ export class PostDetailComponent implements OnInit {
       this.postToDisplay = dataLastEmittedFromObserver;
     });
 
-    // this.postToDisplay = this.postService.getPostById(this.postId);
+    this.commentService.getCommentsByPostId(this.postId).subscribe(dataLastEmittedFromObserver => {
+      this.comments = dataLastEmittedFromObserver;
+    });
   }
 
   clickedUpvote(postId: number) {

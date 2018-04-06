@@ -29,8 +29,8 @@
 <div class="comment-section">
   <app-new-comment></app-new-comment>
 
-  <!-- <div class="the-comments">
-    <p *ngFor="let comment of postToDisplay.allComments">{{comment.text}} <span class="timestamp">{{comment.timestamp}}</span></p>
+  <div class="the-comments">
+    <p *ngFor="let comment of comments">{{comment?.text}} <span class="timestamp">{{comment?.timestamp}}</span></p>
 
-  </div> -->
+  </div>
 </div>
