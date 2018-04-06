@@ -23,26 +23,26 @@ export class PostListComponent implements OnInit {
   ) { }
 
   goToDetailPage(clickedPost: Post) {
-    this.router.navigate(['posts', clickedPost.id]);
+    // this.router.navigate(['posts', clickedPost.id]);
   }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.sortValue = urlParameters['sortValue'];
-      console.log(this.sortValue)
-      if (this.sortValue) {
-        this.posts = this.postService.sortPosts(this.sortValue);
-      } else {
-        this.posts = this.postService.getPosts();
-      }
+  //     console.log(this.sortValue)
+  //     if (this.sortValue) {
+  //       this.posts = this.postService.sortPosts(this.sortValue);
+  //     } else {
+  //       this.posts = this.postService.getPosts();
+  //     }
     });
   }
 
-  clickedUpvote(postId: number) {
-    this.postService.upvotePostById(postId);
-  }
-
-  clickedDownvote(postId: number) {
-    this.postService.downvotePostById(postId);
-  }
+  // clickedUpvote(postId: number) {
+  //   this.postService.upvotePostById(postId);
+  // }
+  //
+  // clickedDownvote(postId: number) {
+  //   this.postService.downvotePostById(postId);
+  // }
 }

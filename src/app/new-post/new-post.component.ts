@@ -22,7 +22,7 @@ export class NewPostComponent implements OnInit {
 
   submitForm(title: string, text: string) {
     let timestamp = new Date;
-    let newPost: Post = new Post(currentId, title, text, 0, 0, timestamp);
+    let newPost: Post = new Post(title, text, 0, 0, timestamp);
     console.log(newPost);
     this.postService.addPost(newPost);
     currentId += 1;

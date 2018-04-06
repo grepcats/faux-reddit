@@ -71,9 +71,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Program should allow posts to be sorted by "top" (highest score of that day)
   * Input: click "sort by top"
   * Output: post list page refreshes sorted by top
+//Friday 2
+* Program will implement firebase
+* Refactor saving posts to use firebase
+* Refactor displaying posts to use firebase
+* Refactor saving comments to use firebase
+* Refactor displaying comments to use firebase
+* Implement categories/subreddits
+* User authentication
+* Associate users with posts/comments
+* Allow users to delete own posts only
+* Allow users to edit own posts only
+* Save articles
 
-## Further Specs
-The project will continue implementing (or attempting to implement) features of Reddit, including user authentication and associated article/comment posting, saving articles, cross-posting, link posting, other sort types, and a backing database.
 
 ## Known Bugs
 No known bugs. Functionality is limited to the features listed in "Specs" above.

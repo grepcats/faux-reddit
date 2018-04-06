@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Post } from './models/post.model';
 import { POSTS } from './mock-posts';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 let today = +new Date();
 @Injectable()
 export class PostService {
-
-  constructor() { }
+  posts: FirebaseListObservable<any[]>;
+  constructor(private database: AngularFireDatabase) {
+    this.posts = database.list('posts');
+  }
 
   getPosts() {
-    return POSTS.sort(compareScore).reverse();
+    //return POSTS.sort(compareScore).reverse();
+    return this.posts;
+
   }
 
   sortPosts(sortValue: string) {
@@ -31,27 +36,28 @@ export class PostService {
   }
 
   getPostById(postId: number) {
-    for (let i = 0; i < POSTS.length; i++) {
-        if (POSTS[i].id === postId) {
-          return POSTS[i];
-        }
-    }
+    // for (let i = 0; i < POSTS.length; i++) {
+    //     if (POSTS[i].id === postId) {
+    //       return POSTS[i];
+    //     }
+    // }
   }
 
   addPost(newPost: Post) {
-    POSTS.push(newPost);
+    //POSTS.push(newPost);
+    this.posts.push(newPost);
   }
 
   upvotePostById(postId: number) {
-    let upvotedPost: Post = this.getPostById(postId);
-    upvotedPost.upvotes++;
-    upvotedPost.updateScore();
+    // let upvotedPost: Post = this.getPostById(postId);
+    // upvotedPost.upvotes++;
+    // upvotedPost.updateScore();
   }
 
   downvotePostById(postId: number) {
-    let downvotedPost: Post = this.getPostById(postId);
-    downvotedPost.downvotes++;
-    downvotedPost.updateScore();
+    // let downvotedPost: Post = this.getPostById(postId);
+    // downvotedPost.downvotes++;
+    // downvotedPost.updateScore();
   }
 
 }

@@ -5,7 +5,6 @@ export class Post {
   public allComments: Comment[] = [];
   public score: number = this.upvotes-this.downvotes;
   constructor(
-    public id: number,
     public title: string,
     public postText: string,
     public upvotes: number,
@@ -19,7 +18,7 @@ export class Post {
 
     addComment(commentText: string) {
       let timestamp = new Date;
-      let newComment = new Comment(this.id, commentText, timestamp);
+      let newComment = new Comment(commentText, timestamp);
       this.allComments.push(newComment);
       console.log(this.allComments);
     }
