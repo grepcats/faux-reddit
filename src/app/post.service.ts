@@ -59,11 +59,15 @@ export class PostService {
     this.posts.push(newPost);
   }
 
-  upvotePostById(postId: number) {
-    // let upvotedPost: Post = this.getPostById(postId);
-    // upvotedPost.upvotes++;
-    // upvotedPost.updateScore();
+  updatePostInDb(localUpdatedPost) {
+    let postEntryInFirebase = this.getPostById(localUpdatedPost.$key)
+    postEntryInFirebase.update({upvotes: localUpdatedPost.upvotes,
+                                downvotes: localUpdatedPost.downvotes,
+                                score: localUpdatedPost.score
+                              })
+
   }
+
 
   downvotePostById(postId: number) {
     // let downvotedPost: Post = this.getPostById(postId);

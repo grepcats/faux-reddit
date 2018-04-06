@@ -50,11 +50,15 @@ export class PostListComponent implements OnInit {
     }
   }
 
-  // clickedUpvote(postId: number) {
-  //   this.postService.upvotePostById(postId);
-  // }
-  //
-  // clickedDownvote(postId: number) {
-  //   this.postService.downvotePostById(postId);
-  // }
+  clickedUpvote(localPost: Post) {
+    localPost.upvotes++;
+    localPost.score = localPost.upvotes-localPost.downvotes;
+    this.postService.updatePostInDb(localPost);
+  }
+
+  clickedDownvote(localPost: Post) {
+    localPost.downvotes++;
+    localPost.score = localPost.upvotes-localPost.downvotes;
+    this.postService.updatePostInDb(localPost);
+  }
 }

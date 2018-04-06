@@ -1,11 +1,11 @@
 <div class="entry" *ngFor="let post of posts">
   <div class="side-arrows">
-    <div class="arrow up" (click)="clickedUpvote(post.id)">
+    <div class="arrow up" (click)="clickedUpvote(post)">
     </div>
     <div class="score">
       {{post.score}}
     </div>
-    <div class="arrow down" (click)="clickedDownvote(post.id)">
+    <div class="arrow down" (click)="clickedDownvote(post)">
     </div>
   </div>
   <div class="side-img">
